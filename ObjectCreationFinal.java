@@ -24,29 +24,29 @@ public class ObjectCreationFinal implements Cloneable, Serializable {
 	public static void main(String[] args) throws Exception {
 
 		try {
-			// Create Object1
+			// Create Object1 using new keyword
 			System.out.println("obj1");
 			ObjectCreationFinal object1 = new ObjectCreationFinal();
 
-			// Create Object2
+			// Create Object2 using clas.forname().newInstance()
 			System.out.println("obj2");
 			ObjectCreationFinal object2 = (ObjectCreationFinal) Class.forName(
 					"com.akh.ObjectCreationEx.ObjectCreationFinal")
 					.newInstance();
 
-			// Create Object3
+			// Create Object3 using clone method
 			System.out.println("obj3");
 			ObjectCreationFinal secondObject = new ObjectCreationFinal();
 			ObjectCreationFinal object3 = (ObjectCreationFinal) secondObject
 					.clone();
 
-			// Create Object4
+			// Create Object4 using classloader.getCkassLoader().loadClass().newInstance()
 			System.out.println("obj4");
 			Object object4 = ObjectCreationFinal.class.getClassLoader()
 					.loadClass("com.akh.ObjectCreationEx.ObjectCreationFinal")
 					.newInstance();
 
-			// Create Object5
+			// Create Object5 using serialization and deserialization
 			// create a new file with an ObjectOutputStream
 			System.out.println("obj5");
 			FileOutputStream out = new FileOutputStream(
